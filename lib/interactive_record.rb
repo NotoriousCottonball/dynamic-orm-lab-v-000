@@ -13,7 +13,6 @@ class InteractiveRecord
      table_columns.reject{|col| col["name"].nil?}.
       map{|col| col["name"]}
     end
-     column_names.compact
   end
 
 

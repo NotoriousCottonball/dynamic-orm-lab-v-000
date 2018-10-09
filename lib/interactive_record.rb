@@ -14,7 +14,11 @@ class InteractiveRecord
       map{|col| col["name"]}
   end
 
-  
+  def initialize(objects_hash={})
+    objects_hash.each do |k, v|
+      self.send("#{k}=", v)
+    end 
+  end 
 
 
 

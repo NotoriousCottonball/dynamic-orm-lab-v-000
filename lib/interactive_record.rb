@@ -10,7 +10,8 @@ class InteractiveRecord
   def self.column_names 
     DB[:conn].results_as_hash = true
      table_columns = DB[:conn].execute("PRAGMA table_info(#{table_name})")
-     table_columns.reject{|col| col["name"].nil?}.map{|col| col
+     table_columns.reject{|col| col["name"].nil?}.
+      map{|col| col["name"]
     end
      column_names.compact
   end

@@ -24,7 +24,7 @@ class InteractiveRecord
     values = "#{values_for_insert}"
     sql = <<-SQL
       INSERT INTO #{table_name_for_insert}(#{col_names_for_insert})
-      VALUES (?
+      VALUES (?)
       SQL
      DB[:conn].execute(sql, values)
      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]

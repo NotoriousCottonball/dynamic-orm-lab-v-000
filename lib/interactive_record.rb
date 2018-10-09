@@ -12,7 +12,6 @@ class InteractiveRecord
      table_columns = DB[:conn].execute("PRAGMA table_info(#{table_name})")
      table_columns.reject{|col| col["name"].nil?}.
       map{|col| col["name"]}
-    end
   end
 
 

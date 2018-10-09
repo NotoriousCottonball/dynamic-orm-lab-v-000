@@ -14,6 +14,7 @@ class InteractiveRecord
       map{|col| col["name"]}
   end
 
+  
 
 
 
